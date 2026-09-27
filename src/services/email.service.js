@@ -50,7 +50,7 @@ async function sendEmail({
 
   const payload = {
     sender: {
-      name: env.brevoSenderName || "Mission Library",
+      name: env.brevoSenderName || "Mission Raj Library",
       email: env.brevoSenderEmail
     },
     to: [{
@@ -141,7 +141,7 @@ function layout(title, subtitle, content) {
       </div>
 
       <div style="padding:22px 30px;background:#f8fafc;border-top:1px solid #e5e7eb;">
-        <div style="font-weight:700;color:#111827;">Mission Library</div>
+        <div style="font-weight:700;color:#111827;">Mission Raj Library</div>
         <div style="font-size:13px;color:#64748b;margin-top:5px;">
           Library Management System
         </div>
@@ -188,14 +188,14 @@ async function sendStudentCreatedEmail(student) {
 
   const html = layout(
     "Membership Confirmed",
-    "Your Mission Library membership has been successfully registered.",
+    "Your Mission Raj Library membership has been successfully registered.",
     `
       <p style="font-size:16px;margin-top:0;">
         Hello <strong>${name}</strong> 👋
       </p>
 
       <p style="color:#475569;line-height:1.7;">
-        Welcome to <strong>Mission Library</strong>.
+        Welcome to <strong>Mission Raj Library</strong>.
         Your membership has been successfully added to our library management system.
       </p>
 
@@ -225,7 +225,7 @@ async function sendStudentCreatedEmail(student) {
       </div>
 
       <p style="margin-bottom:0;color:#475569;">
-        Thank you for choosing <strong>Mission Library</strong>.
+        Thank you for choosing <strong>Mission Raj Library</strong>.
       </p>
     `
   );
@@ -233,7 +233,7 @@ async function sendStudentCreatedEmail(student) {
   return sendEmail({
     to: student.email,
     toName: student.name,
-    subject: "Mission Library — Membership Confirmed",
+    subject: "Mission Raj Library — Membership Confirmed",
     html
   });
 }
@@ -255,7 +255,7 @@ async function sendPaymentReceivedEmail(student, payment) {
       </p>
 
       <p style="color:#475569;line-height:1.7;">
-        We have successfully recorded your payment with Mission Library.
+        We have successfully recorded your payment with Mission Raj Library.
         Please keep this email as your payment confirmation.
       </p>
 
@@ -290,7 +290,7 @@ async function sendPaymentReceivedEmail(student, payment) {
   return sendEmail({
     to: student.email,
     toName: student.name,
-    subject: "Mission Library — Payment Received",
+    subject: "Mission Raj Library — Payment Received",
     html
   });
 }
@@ -313,7 +313,7 @@ async function sendFeeReminderEmail(student, kind) {
 
   const html = layout(
     title,
-    "Mission Library fee status notification.",
+    "Mission Raj Library fee status notification.",
     `
       <p style="font-size:16px;margin-top:0;">
         Hello <strong>${name}</strong> 👋
@@ -340,8 +340,8 @@ async function sendFeeReminderEmail(student, kind) {
     to: student.email,
     toName: student.name,
     subject: expired
-      ? "Mission Library — Fee Overdue Reminder"
-      : "Mission Library — Fee Due Reminder",
+      ? "Mission Raj Library — Fee Overdue Reminder"
+      : "Mission Raj Library — Fee Due Reminder",
     html
   });
 }
@@ -386,7 +386,7 @@ async function sendMembershipExpiringEmail(student, daysLeft) {
   return sendEmail({
     to: student.email,
     toName: student.name,
-    subject: `Mission Library — Membership ${daysLeft === 0 ? "Expires Today" : "Expiry Reminder"}`,
+    subject: `Mission Raj Library — Membership ${daysLeft === 0 ? "Expires Today" : "Expiry Reminder"}`,
     html
   });
 }
