@@ -1,0 +1,20 @@
+node_modules/
+.env
+.env.*
+!.env.example
+npm-debug.log*
+logs/
+*.log
+coverage/
+.DS_Store
+dist/
+tmp/
+backups/
+email-system-backup-*/
+
+# Backup files
+*.backup
+*.bak
+*.backup-*
+*.before-fix*
+*.fix2-backup
