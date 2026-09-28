@@ -16,7 +16,7 @@ async function attachOccupants(seats) {
     seat: { $in: seats.map((s) => s._id) },
     releasedAt: null
   })
-    .populate("student", "name studentId mobile")
+    .populate("student", "name studentId mobile membership")
     .lean();
 
   const bySeat = new Map(allocations.map((a) => [String(a.seat), a]));
