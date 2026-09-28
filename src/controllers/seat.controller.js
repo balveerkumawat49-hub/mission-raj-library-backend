@@ -29,7 +29,8 @@ async function attachOccupants(seats) {
         id: allocation.student._id,
         name: allocation.student.name,
         studentId: allocation.student.studentId,
-        mobile: allocation.student.mobile
+        mobile: allocation.student.mobile,
+        membership: allocation.student.membership
       };
       json.allocationId = allocation._id;
     }
