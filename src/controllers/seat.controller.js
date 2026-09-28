@@ -76,7 +76,7 @@ const update = asyncHandler(async (req, res) => {
     }
   }
 
-  ["seatNumber", "floor", "zone", "status", "notes"].forEach((field) => {
+  ["seatNumber", "floor", "zone", "status", "notes", "x", "y"].forEach((field) => {
     if (req.body[field] !== undefined) seat[field] = req.body[field];
   });
 

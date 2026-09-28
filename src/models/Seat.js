@@ -14,7 +14,9 @@ const seatSchema = new mongoose.Schema(
       enum: ["available", "occupied", "reserved", "maintenance", "blocked"],
       default: "available"
     },
-    notes: { type: String, default: "" }
+    notes: { type: String, default: "" },
+    x: { type: Number, default: 0 },
+    y: { type: Number, default: 0 }
   },
   { timestamps: true }
 );
